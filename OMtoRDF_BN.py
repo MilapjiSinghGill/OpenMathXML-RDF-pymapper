@@ -61,7 +61,7 @@ def parse_element(elem, g):
             g.add((app_node, OM.arguments, list_root))
         return app_node
     else:
-        raise ValueError(f"Unbekannter OpenMath-Tag: {tag}")
+        raise ValueError(f"Unknown OpenMath-Tag: {tag}")
 
 def convert_xml_to_ttl(xml_file):
     global bnode_counter
@@ -84,6 +84,6 @@ if __name__ == "__main__":
     for file in folder.glob("*.xml"):
         try:
             convert_xml_to_ttl(file)
-            print(f"✔️  {file.name} konvertiert.")
+            print(f" {file.name} converted.")
         except Exception as e:
-            print(f"⚠️  Fehler bei {file.name}: {e}")
+            print(f"  Error with {file.name}: {e}")
